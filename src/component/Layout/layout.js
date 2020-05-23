@@ -18,7 +18,7 @@ function Layout(props) {
                         {props.children}           
                 </section>
 
-                <Aside/>
+                <Aside menus={props}/>
                     
                 </main>
                 <footer className="footer">
