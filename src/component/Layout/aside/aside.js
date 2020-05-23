@@ -8,10 +8,9 @@ library.add(fas)
 class Aside extends React.Component {
     componentDidMount(){
         // console.log(this.props.menus.menu)
-        // debugger
         return(
-        // console.log(this.props.menus.menu)
-        this.props.menus.menu.map(menu =>{
+            
+            this.props.menus.menu.map(menu =>{
             return(
             <div key={menu.key}>
             <section  className="aside-paginas">

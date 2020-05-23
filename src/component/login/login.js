@@ -31,7 +31,7 @@ class login extends React.Component {
         "password" : this.state.contraseña,
         "client" : 2
       }).then(function (response) {
-        // console.log(response.data);
+            // console.log(response.data);
         sessionStorage.setItem("key",response.data.token)
         console.log(sessionStorage)
         localStorage.setItem("user",JSON.stringify(response.data))

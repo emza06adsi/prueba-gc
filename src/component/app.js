@@ -7,29 +7,42 @@ import E404 from './e404'
 function App (){
 
     let data=[]
+    
     data = JSON.parse(localStorage.getItem("user"))
 
-    return(
-        <BrowserRouter>
-     
+    if(data===null){
+        return(
+            <BrowserRouter>
                 <Switch>
-                    <Route exact path="/" component={Login} />
-                    {/* <Route exact path='/pendientes' component={Saludo} /> */}
-                    
-      
-                <Layout menu={data.modules}>
-                    
-                        <Route exact path={"/saludo"} component={Saludo}/>
-                        <Route exact path={"config/devices"} component={Saludo} />
-                        {/* <Route exact  component={E  404} /> */}
-                        <Route component={E404} />
+                        <Route component={Login} />
+                </Switch>
+            </BrowserRouter> 
+        )
+    }
+    else{
+        return(
+            <BrowserRouter>
+         
+                    <Switch>
+                        <Route exact path="/" component={Login} />
+                        
+          
+                    <Layout menu={data.modules}>
+                        
+                            <Route exact path={"/saludo"} component={Saludo}/>
+                            <Route exact path={"config/devices"} component={Saludo} />
+                            {/* <Route exact  component={E  404} /> */}
+                            <Route component={E404} />
+    
+                        
+                    </Layout>
+    
+                </Switch>
+            </BrowserRouter>
+        )
+    }
 
-                    
-                </Layout>
-
-            </Switch>
-        </BrowserRouter>
-    )
+    
 }
    
     
