@@ -12,8 +12,12 @@ function Layout(props) {
                 {/* <header className="header"></header> */}
                 <main className="main">
                 
-                <Header/>
-                
+                {/* <Header/> */}
+                <section className="content">
+                        <Header />
+                        {props.children}           
+                </section>
+
                 <Aside/>
                     
                 </main>

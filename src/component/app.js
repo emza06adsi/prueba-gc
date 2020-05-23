@@ -2,20 +2,33 @@ import React from 'react'
 import {BrowserRouter,Switch, Route} from 'react-router-dom'
 import Login from './login/login'
 import Layout from './Layout/layout'
-const App =()=>(
-    <BrowserRouter>
-        <Switch>
-            <Route exact path={'/'} component={Login} />
+import Saludo from './saludo'
+function App (){
 
-            
-            
+    console.log("datos")
 
-            <Layout>
+    return(
+        <BrowserRouter>
+     
+                <Switch>
+                    <Route exact path="/" component={Login} />
+                    {/* <Route exact path='/pendientes' component={Saludo} /> */}
+                    
+      
+                <Layout>
+                    
+                        <Route exact path="/saludo" component={Saludo} />
 
-            </Layout>
+                    
+                </Layout>
 
-        </Switch>    
-    </BrowserRouter>
-);
+            </Switch>
+        </BrowserRouter>
+    )
+}
+   
+    
+    
+
 
 export default App;

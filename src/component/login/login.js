@@ -2,6 +2,7 @@ import React from "react"
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Link, Redirect } from "react-router-dom"
 import './login.css'
+import axios from "axios"
 class login extends React.Component {
 
     constructor(props) {
@@ -9,48 +10,42 @@ class login extends React.Component {
 
         this.state = {};
 
-        // this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange = e => {
 
         this.setState({
             [e.target.name]: e.target.value
-
+            
         });
-
+        console.log(this.state)
     };
-    cambiotipo() {
-        let inputP = document.getElementById("contraseña")
-        if (inputP.type == "text") {
-            inputP.type = "password"
-            document.getElementById("imgcontraseña").src = "https://img.icons8.com/windows/20/000000/visible.png";
-        } else {
-            inputP.type = "text"
-            document.getElementById("imgcontraseña").src = "https://img.icons8.com/windows/20/000000/invisible.png";
-        }
-    }
 
     handleSubmit = async e => {
-    //     e.preventDefault();
-    //     let correo = this.state.usuario
-
-    //     let contrasena = this.state.contraseña
+        e.preventDefault();
+    
+//    console.log(sessionStorage)
+    const data= await axios.post('https://api.myintelli.net/v1/login', {
+        "username": this.state.usuario,
+        "password" : this.state.contraseña,
+        "client" : 2
+      }).then(function (response) {
+        // console.log(response.data);
+        sessionStorage.setItem("key",response.data.token)
+        console.log(sessionStorage)
+        localStorage.setItem("user",JSON.stringify(response.data))
+        console.log(localStorage)
+        window.location="/saludo"
         
+    })
+      .catch(function (error) {
+        alert("datos no validos")
+        console.log(error);
+      });
 
-    //     let data = await axios.post("http://localhost:3001/api/auth/login", {
-    //         correo,
-    //         contrasena
-    //     })
-    //    document.getElementById("null").innerHTML=JSON.stringify(data)
-    //     // if (data.body != null) {
-    //     document.cookie=correo
-    //     window.location="/pendientes"
-    //     // }
-    //     // else {
-    //     //     document.getElementById("null").innerHTML = "datos errroneos"
-
-    //     // }
+      
+      
 
 
     };
@@ -83,7 +78,7 @@ class login extends React.Component {
                         </div>
                         <div className="input-group mb-3">
                             <div className="input-group-prepend">
-                                <span className="input-group-text" id="basic-addon1">
+                                    <span className="input-group-text" id="basic-addon1">
                                     <img src="https://img.icons8.com/windows/20/000000/lock.png" />
                                 </span>
                             </div>
@@ -93,8 +88,8 @@ class login extends React.Component {
                                 value={this.state.usucontraseña}
                                 id="contraseña"
                                 type="password"
-                                className="form-control"
                                 placeholder="Contraseña"
+                                className="form-control"
                                 aria-label="Contraseña"
                                 aria-describedby="basic-addon1">
 
@@ -106,13 +101,22 @@ class login extends React.Component {
                                 </span>
                             </div>
                         </div>
-                        <button class="login-btn" id="btnIngresar">INGRESAR</button>
+                        <button className   ="login-btn" id="btnIngresar">INGRESAR</button>
 
                     </form>
-                    <a href="">olvidaste tu contraseña</a>
                 </div>
             </React.Fragment>
         )
+    }
+    cambiotipo() {
+        let inputP = document.getElementById("contraseña")
+        if (inputP.type == "text") {
+            inputP.type = "password"
+            document.getElementById("imgcontraseña").src = "https://img.icons8.com/windows/20/000000/visible.png";
+        } else {
+            inputP.type = "text"
+            document.getElementById("imgcontraseña").src = "https://img.icons8.com/windows/20/000000/invisible.png";
+        }
     }
 
 
