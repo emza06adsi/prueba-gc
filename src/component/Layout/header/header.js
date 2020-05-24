@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core' 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {fas} from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 
 class Header extends React.Component {
   
@@ -21,18 +25,20 @@ class Header extends React.Component {
         return (
             // <nav className="navbar"></nav>
             <div className="header">
-            <img src="" />
-            <div className="header__menu">
-              <div className="header__menu--profile">
-        <p>{this.state.user.user.user_name}</p>
-              </div>
-              
-              <ul>
-                <li><Link to="/Cuenta">count</Link></li>
-                <li><Link onClick={this.handleclick}>Sign off</Link></li>
-                {/* <li>< Link to="/">Cerrar Sesión</Link></li> */}
+                <img src="" />
+              <div className="header__menu">
+                <div className="header__menu--profile">
+                    <FontAwesomeIcon icon="user"/>
+                    <p>    {this.state.user.user.user_name}</p>
+                    <FontAwesomeIcon icon="sort-down"/>
+                    
+                    
+                </div>
+                <ul>
+                    <li><Link to="/Cuenta">Account</Link></li>
+                    <li><a onClick={this.handleclick}>Sign off</a></li>
                 
-              </ul>
+                </ul>
               </div>
              
             </div>

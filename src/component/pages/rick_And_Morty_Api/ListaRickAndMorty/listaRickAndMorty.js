@@ -33,20 +33,20 @@ class ListaRickAndMorty extends React.Component{
             this.props.Lista.map((personajes)=>{
                 return(
                     <section key={personajes.id} className="lista">
-                    <section className="lista-img">
-                        <img src={personajes.image}></img>
-                    </section>
-                    <section className="lista-info">
+                        <section className="lista-img">
+                            <img src={personajes.image}></img>
+                        </section>
+                        <section className="lista-info">
 
-                       <section className="lista-info_data"> 
-                            <p>{personajes.name}</p>
-                           <p>{personajes.species}</p>
-                               <button id={JSON.stringify(personajes)} onClick={this.handleClick}>properties</button>
+                            <section className="lista-info_data"> 
+                                <p>{personajes.name}</p>
+                                <p>{personajes.species}</p>
+                               <button id={JSON.stringify(personajes)} onClick={this.handleClick}>Features</button>
                            
-                       </section>
+                            </section>
 
-                   </section>
-               </section>
+                        </section>
+                    </section>
             
                 )
             })

@@ -7,17 +7,16 @@ import {fas} from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 class Aside extends React.Component {
     componentDidMount(){
-        // console.log(this.props.menus.menu)
         return(
             
             this.props.menus.menu.map(menu =>{
-            return(
-            <div key={menu.key}>
-            <section  className="aside-paginas">
-            <Link to={"/"+menu.route}> <FontAwesomeIcon icon="cogs" />{menu.value}</Link>
-            </section>
-            {this.menuMenu(menu.menu)}
-            </div>
+                return(
+                    <div key={menu.key}>
+                        <section  className="aside-paginas">
+                            <Link to={"/"+menu.route}> <FontAwesomeIcon icon="cogs" />{menu.value}</Link>
+                        </section>
+                            {this.menu(menu.menu)}
+                    </div>
             
         )
             
@@ -27,20 +26,18 @@ class Aside extends React.Component {
     }
 
 
-    menuMenu(menu){
+    menu(menu){
         
         
         if(menu.length==0){
             console.log("errror")
         }   
         else{
-            // debugger
             return(
                 
-                <section key={menu[0].key} className="aside-paginas">
-                <Link to={"/"+menu[0].route}> <FontAwesomeIcon icon="cogs" />{menu[0].value}</Link>
-                {/* {()=>{this.menuMenu(menu.menu)}} */}
-                </section>
+                    <section key={menu[0].key} className="aside-paginas">
+                        <Link to={"/"+menu[0].route}> <FontAwesomeIcon icon="cogs" />{menu[0].value}</Link>
+                    </section>
                   
             )
         }
@@ -57,10 +54,10 @@ class Aside extends React.Component {
                 {this.componentDidMount()}
               
                 <div key="1">
-            <section  className="aside-paginas">
-            <Link to="/rickAndMorty"> <img src="https://rickandmortyapi.com/api/character/avatar/19.jpeg" width="30px"/>rickandmortyapi </Link>
-            </section>
-            </div>
+                    <section  className="aside-paginas">
+                        <Link to="/rickAndMorty">RICK-AND-MORTY-APY </Link>
+                    </section>
+                </div>
 
             </aside>
         )

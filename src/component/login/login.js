@@ -26,12 +26,12 @@ class login extends React.Component {
         e.preventDefault();
     
 //    console.log(sessionStorage)
-    const data= await axios.post('https://api.myintelli.net/v1/login', {
-        "username": this.state.usuario,
-        "password" : this.state.contraseña,
-        "client" : this.state.client
-      }).then(function (response) {
-            // console.log(response.data);
+        const data= await axios.post('https://api.myintelli.net/v1/login', {
+            "username": this.state.usuario,
+            "password" : this.state.contraseña,
+            "client" : this.state.client
+        }).then(function (response) {
+        
         sessionStorage.setItem("key",response.data.token)
         console.log(sessionStorage)
         localStorage.setItem("user",JSON.stringify(response.data))
@@ -40,8 +40,10 @@ class login extends React.Component {
         
     })
       .catch(function (error) {
-        alert("datos no validos")
-        console.log(error);
+          document.getElementById('password').style.color="red"  
+          document.getElementById('password').innerText="the fields are wrong"
+
+            console.log(error);
       });
 
       
@@ -55,7 +57,7 @@ class login extends React.Component {
             <React.Fragment>
                 <p id="null"></p>
                 <div className="login" id="login">
-                    <h1>INICIO DE SESION </h1>
+                    <h1>SIGN IN TO SESSION </h1>
 
                     <form onSubmit={this.handleSubmit} className="input">
                     <div className="input-group mb-3">
@@ -70,8 +72,9 @@ class login extends React.Component {
                                 value={this.state.usuusuario}
                                 type="text"
                                 className="form-control"
-                                placeholder="username"
+                                placeholder="Username"
                                 aria-label="Username"
+                                autocomplete="off"
                                 aria-describedby="basic-addon1">
 
                             </input>
@@ -79,7 +82,7 @@ class login extends React.Component {
                         <div className="input-group mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text" id="basic-addon1">
-                                    <img src="https://img.icons8.com/windows/20/000000/user-male.png" />
+                                        <img src="https://img.icons8.com/material-outlined/20/000000/thin-client.png"/>
                                 </span>
                             </div>
                             <input
@@ -88,8 +91,9 @@ class login extends React.Component {
                                 value={this.state.usuclient}
                                 type="text"
                                 className="form-control"
-                                placeholder="client"
+                                placeholder="Client"
                                 aria-label="client"
+                                autocomplete="off"
                                 aria-describedby="basic-addon1">
 
                             </input>
@@ -107,9 +111,10 @@ class login extends React.Component {
                                 value={this.state.usucontraseña}
                                 id="contraseña"
                                 type="password"
-                                placeholder="password"
+                                placeholder="Password"
                                 className="form-control"
                                 aria-label="Contraseña"
+                                autocomplete="off"
                                 aria-describedby="basic-addon1">
 
                             </input>
@@ -120,9 +125,10 @@ class login extends React.Component {
                                 </span>
                             </div>
                         </div>
-                        <button className   ="login-btn" id="btnIngresar">INGRESAR</button>
+                        <button className   ="login-btn" id="btnIngresar">SIGN IN</button>
 
                     </form>
+                    <p id="password"></p>
                 </div>
             </React.Fragment>
         )

@@ -1,11 +1,9 @@
 .aside-paginas{
-    color:white;
-    /* outline: 1px solid white; */
+        /* outline: 1px solid white; */
     /* border: 2px solid white; */
     padding: 15px;
     
-    margin-left: 2%;
-    margin-right:2%;
+    
     transition-duration: .2s;
     /* margin-bottom: 10px; */
 /* outline:1px solid chocolate; */
@@ -16,6 +14,7 @@
 
 .aside-paginas a{
     color:white;
-    text-decoration: none
+    text-decoration: none;
+    text-align: left;
     /* outline:none ; */
 }

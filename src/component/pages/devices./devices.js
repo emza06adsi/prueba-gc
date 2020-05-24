@@ -3,7 +3,7 @@ import axios from 'axios'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import Loading from '../state/loading/loading'
 import Error from '../state/error/error'
-import ListaDevises from './lista/listaDevises'
+import ListaDevices from './lista/listaDevices'
 let key=sessionStorage.getItem("key")
 
 axios.interceptors.request.use(
@@ -30,14 +30,11 @@ class Devices extends React.Component{
     }
 
     componentDidMount(){
-
-        this.ferchData()
-    // console.log(this.state.data)
+     this.ferchData()
     }
 
     async ferchData(){
-        const response = await axios.get(`https://api.myintelli.net/v1/2/devices?limit=${this.state.cantidad}`);
-            
+        const response = await axios.get(`https://api.myintelli.net/v1/2/devices?limit=${this.state.cantidad}&offset=0&search`);
         try {
             console.log(response);
             this.setState({data:response,loading:false})
@@ -64,7 +61,7 @@ class Devices extends React.Component{
             return(
                 <div>
                      <button className="containe" onClick={this.handleClick}>+</button>
-                    <ListaDevises data={this.state.data.data.data.results}/>
+                    <ListaDevices data={this.state.data.data.data.results}/>
              
                 </div>
                 )

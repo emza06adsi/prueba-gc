@@ -100,13 +100,14 @@
 
 .aside{
     /* outline:1px solid chocolate; */
+    
     background-color: #00242c;
     flex: 0 0 5%;
     transition-duration: 1s; 
 
 }
 .aside:hover{
-    text-align: center;
+    text-align: left  ;
     flex: 0 0 20%;
 }
 .aside-navbar{
@@ -133,23 +134,6 @@
     background-color: #00242c;
     
 }
-.aside-paginas{
-    color:white;
-    /* outline: 1px solid white; */
-    /* border: 2px solid white; */
-    padding: 15px;
-    margin-left: 2%;
-    margin-right:2%;
-    transition-duration: .2s;
-    /* margin-bottom: 10px; */
-/* outline:1px solid chocolate; */
-}
-.aside-paginas:hover{
-    background-color:#003946 ;
-}
 
-.aside-paginas a{
-    color:white;
-    text-decoration: none
-    /* outline:none ; */
-}
+
+

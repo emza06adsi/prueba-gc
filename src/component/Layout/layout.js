@@ -9,16 +9,14 @@ function Layout(props) {
     return (
         <div className="div">
 
-                {/* <header className="header"></header> */}
                 <main className="main">
                 
-                {/* <Header/> */}
-                <section className="content">
-                        <Header />
-                        {props.children}           
-                </section>
+                    <section className="content">
+                            <Header />
+                            {props.children}           
+                    </section>
 
-                <Aside menus={props}/>
+                    <Aside menus={props}/>
                     
                 </main>
                 <footer className="footer">
@@ -26,7 +24,7 @@ function Layout(props) {
                 </footer>
 
 
-            </div>
+        </div>
         
     )
 }

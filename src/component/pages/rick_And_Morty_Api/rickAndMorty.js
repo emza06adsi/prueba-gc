@@ -43,7 +43,7 @@ class RickAndMorty extends React.Component{
 
         return(
              <div className="containerRickAndMorty">
-            <ListaRickAndMorty Lista={this.state.data} />
+                <ListaRickAndMorty Lista={this.state.data} />
             </div>
         )
      }

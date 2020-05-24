@@ -1,6 +1,6 @@
 import React from 'react'
-import './count.css'
-class Count extends React.Component{
+import './account.css'
+class Account extends React.Component{
 
     constructor(props){
         super(props)
@@ -22,7 +22,7 @@ class Count extends React.Component{
                         <article className="user_data">
                             <section className="data--item">
                                 <div className="item__label">
-                                    <label>id:</label>
+                                    <label>Id:</label>
                                 </div>
                                 <div className="item__name">
                                     <p>{this.state.user.user.id_user}</p>
@@ -30,7 +30,7 @@ class Count extends React.Component{
                             </section>
                             <section className="data--item">
                                 <div className="item__label">
-                                    <label>user:</label>
+                                    <label>User:</label>
                                 </div>
                                 <div className="item__name">
                                     <p>{this.state.user.user.user_name}</p>
@@ -38,7 +38,7 @@ class Count extends React.Component{
                             </section>
                             <section className="data--item">
                                 <div className="item__label">
-                                    <label>mail:</label>
+                                    <label>Mail:</label>
                                 </div>
                                 <div className="item__name">
                                     <p>{this.state.user.user.email}</p>
@@ -46,7 +46,7 @@ class Count extends React.Component{
                             </section>
                             <section className="data--item">
                                 <div className="item__label">
-                                    <label>phone:</label>
+                                    <label>Phone:</label>
                                 </div>
                                 <div className="item__name">
                                     <p>{this.state.user.user.phone}</p>
@@ -54,7 +54,7 @@ class Count extends React.Component{
                             </section>
                             <section className="data--item">
                                 <div className="item__label">
-                                    <label>ip:</label>
+                                    <label>Ip:</label>
                                 </div>
                                 <div className="item__name">
                                     <p>{this.state.user.user.ip}</p>
@@ -69,4 +69,4 @@ class Count extends React.Component{
 
  }
 
- export default Count;
+ export default Account;

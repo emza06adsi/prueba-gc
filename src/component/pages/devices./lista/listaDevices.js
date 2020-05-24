@@ -1,9 +1,9 @@
 import React from 'react'
-import './listaDevises.css'
+import './listaDevices.css'
 import '../../../../../node_modules/bootstrap/dist/css/bootstrap.css'
 
 
-function useSeachDevises(data){
+function useSeachDevices(data){
 
     const [query, setQuery] = React.useState('')
     const [filterDevice, setFilterDevice] =React.useState(data)    
@@ -29,10 +29,10 @@ function useSeachDevises(data){
         return {query,setQuery,filterDevice }
 }
 
-function ListaDevises (props) {
+function ListaDevices (props) {
 
     const data = props.data
-const {query,setQuery,filterDevice}= useSeachDevises(data)
+const {query,setQuery,filterDevice}= useSeachDevices(data)
     // debugger
     
   function  devices(){
@@ -70,17 +70,25 @@ const {query,setQuery,filterDevice}= useSeachDevises(data)
         return(
             <section className="container">
             <div className="form-group ">
-                <label>FILTER BY:<strong>id_device</strong>  ||<strong>device_name</strong> ||<strong>device_model</strong></label>    
-                <input 
+                <label>FILTER BY: <strong>Id_device</strong> OR <strong> Device_name </strong> OR <strong>Device_model</strong></label>    
+          
+                <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="basic-addon1">
+                                <img src="https://img.icons8.com/metro/20/000000/detective.png"/>
+                                    {/* <img src="https://img.icons8.com/windows/20/000000/user-male.png" /> */}
+                                </span>
+                            </div>
+                            <input
                     type="text"
                     className="form-control"
                     value={query}
                     onChange={(e)=>{
                         setQuery(e.target.value)
-                    }}
-                >
-
-                </input>
+                    }}>
+                                </input>
+                        </div>
+                
             </div>    
             <div className="modal-vista"  role="dialog">
 
@@ -89,11 +97,11 @@ const {query,setQuery,filterDevice}= useSeachDevises(data)
                 <table id="customers">
                     <thead>
                     <tr>
-                        <th className="sticky">id_device</th>
-                        <th className="sticky">device_name</th>
-                        <th className="sticky">id_device_model</th>
-                        <th className="sticky">device_model</th>
-                        <th className="sticky">status</th>
+                        <th className="sticky">Id_device</th>
+                        <th className="sticky">Device_name</th>
+                        <th className="sticky">Id_device_model</th>
+                        <th className="sticky">Device_model</th>
+                        <th className="sticky">Status</th>
                         
                     </tr>
 
@@ -116,12 +124,4 @@ const {query,setQuery,filterDevice}= useSeachDevises(data)
 
 }
 
-export default ListaDevises;
-// const ListaDevises =(props)=>{
-
-
-
-// }
-
-
-
+export default ListaDevices;

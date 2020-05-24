@@ -10,8 +10,11 @@ class E404 extends React.Component{
             <div className="DIVERROR">
                 <h1>404</h1>
                 
-                <p>LA PAGINA NO EXISTE O ESTA EN CONSTRUCCION</p>
-                <p>INTENTALO MAS TARDE</p>
+                
+
+
+                <p>LA PAGINA NO EXISTE O ESTA EN CONSTRUCCIÓN,</p>
+                <p>INTENTE MÁS TARDE.</p>
               
                   
             
@@ -24,3 +27,13 @@ class E404 extends React.Component{
 }
 
 export default E404;
+
+
+
+
+
+
+
+
+
+
