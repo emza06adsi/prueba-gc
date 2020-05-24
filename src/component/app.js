@@ -3,7 +3,7 @@ import {BrowserRouter,Switch, Route} from 'react-router-dom'
 import Login from './login/login'
 import Layout from './Layout/layout'
 import Saludo from './pages/saludo/saludo'
-import E404 from './pages/e404'
+import E404 from './pages/e404/e404'
 import Devices from './pages/devices./devices'
 import RickAndMorty from './pages/rick_And_Morty_Api/rickAndMorty'
 import Count from './pages/count/count'
@@ -31,18 +31,16 @@ function App (){
                         
           
                     <Layout menu={data.modules}>
-                        
+                        <Switch>
                             <Route exact path={"/saludo"} component={Saludo}/>
                             <Route exact path={"/config/devices"} component={Devices} />
                             <Route exact path={"/rickAndMorty"} component={RickAndMorty} />
                             <Route exact path={"/Cuenta"} component={Count}/>       
-                                                    
-                            {/* <Route  component={E404}/> */}
-                           
+                            <Route  component={E404}/>
+                            </Switch>
                         
                     </Layout>
-                    <Route component={E404} />
-    
+                    
                 </Switch>
             </BrowserRouter>
         )

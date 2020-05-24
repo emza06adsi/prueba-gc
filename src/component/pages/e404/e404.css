@@ -1,0 +1,35 @@
+.DIVERROR{
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: grey; */
+    /* background-color: whitesmoke; */
+    text-align: center;
+}
+    
+.DIVERROR h1{
+    color: #003946;
+    font-size: 150px;
+}
+.DIVERROR p{
+    color:#003946;
+    font-size: 40px;
+}
+
+@media screen and (max-width: 860px)  {
+    /* For mobile phones: */
+    .DIVERROR h1{
+        color: #003946;
+        font-size: 100px;
+    }
+    .DIVERROR p{
+        /* background-color: tomato; */
+        color:#003946;
+        font-size: 20px;
+    }   
+        
+  }
+
+
+
