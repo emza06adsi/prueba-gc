@@ -4,14 +4,14 @@ import Login from './login/login'
 import Layout from './Layout/layout'
 import Saludo from './pages/saludo/saludo'
 import E404 from './pages/e404'
-import Devices from './pages/devices'
+import Devices from './pages/devices./devices'
 
 function App (){
 
     let data=[]
     
     data = JSON.parse(localStorage.getItem("user"))
-
+    
     if(data===null){
         return(
             <BrowserRouter>
