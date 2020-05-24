@@ -6,7 +6,7 @@ import Saludo from './pages/saludo/saludo'
 import E404 from './pages/e404'
 import Devices from './pages/devices./devices'
 import RickAndMorty from './pages/rick_And_Morty_Api/rickAndMorty'
-// import Count from ''
+import Count from './pages/count/count'
 function App (){
 
     let data=[]
@@ -35,7 +35,7 @@ function App (){
                             <Route exact path={"/saludo"} component={Saludo}/>
                             <Route exact path={"/config/devices"} component={Devices} />
                             <Route exact path={"/rickAndMorty"} component={RickAndMorty} />
-                            
+                            <Route exact path={"/Cuenta"} component={Count}/>       
                                                     
                             {/* <Route  component={E404}/> */}
                            

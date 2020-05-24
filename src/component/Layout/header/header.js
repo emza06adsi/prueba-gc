@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 class Header extends React.Component {
   
   constructor(props){
@@ -9,6 +10,12 @@ class Header extends React.Component {
     }
   }
   
+  handleclick(){
+    localStorage.clear()
+    sessionStorage.clear()
+    window.location="/"
+  }
+
   render() {
 
         return (
@@ -21,8 +28,8 @@ class Header extends React.Component {
               </div>
               
               <ul>
-                <li><a href="/Cuenta">count</a></li>
-                <li><a href="/">Sign off</a></li>
+                <li><Link to="/Cuenta">count</Link></li>
+                <li><Link onClick={this.handleclick}>Sign off</Link></li>
                 {/* <li>< Link to="/">Cerrar Sesión</Link></li> */}
                 
               </ul>
