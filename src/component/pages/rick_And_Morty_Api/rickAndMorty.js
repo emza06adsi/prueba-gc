@@ -3,6 +3,7 @@ import Loading from '../state/loading/loading'
 import Error from '../state/error/error'
 import ListaRickAndMorty from './ListaRickAndMorty/listaRickAndMorty'
 import './rickAndMorty.css'
+
 class RickAndMorty extends React.Component{
 
     constructor(props){
@@ -41,7 +42,7 @@ class RickAndMorty extends React.Component{
         }
 
         return(
-             <div className="ejm">
+             <div className="containerRickAndMorty">
             <ListaRickAndMorty Lista={this.state.data} />
             </div>
         )
