@@ -70,7 +70,7 @@ const {query,setQuery,filterDevice}= useSeachDevises(data)
         return(
             <section className="container">
             <div className="form-group ">
-                <label>Filter devises</label>    
+                <label>FILTRAR  POR:<strong>NOMBRE</strong>  ||<strong>ID</strong> ||<strong>MODELO</strong></label>    
                 <input 
                     type="text"
                     className="form-control"

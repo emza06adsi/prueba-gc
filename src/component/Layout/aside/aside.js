@@ -56,6 +56,12 @@ class Aside extends React.Component {
 
                 {this.componentDidMount()}
               
+                <div key="1">
+            <section  className="aside-paginas">
+            <Link to="/rickAndMorty"> <img src="https://rickandmortyapi.com/api/character/avatar/19.jpeg" width="30px"/>rickandmortyapi </Link>
+            </section>
+            </div>
+
             </aside>
         )
     }
