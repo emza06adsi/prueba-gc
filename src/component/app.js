@@ -6,6 +6,7 @@ import Saludo from './pages/saludo/saludo'
 import E404 from './pages/e404'
 import Devices from './pages/devices./devices'
 import RickAndMorty from './pages/rick_And_Morty_Api/rickAndMorty'
+// import Count from ''
 function App (){
 
     let data=[]

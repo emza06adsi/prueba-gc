@@ -41,11 +41,11 @@ const {query,setQuery,filterDevice}= useSeachDevises(data)
     if(filterDevice.length ===0){
         return(
                     <tr key={1}>
-                        <td>no</td>
-                        <td>tenemos </td>
-                        <td>datos</td>
-                        <td>con este</td>
-                        <td>nombre</td>
+                        <td>not</td>
+                        <td>we have </td>
+                        <td>data</td>
+                        <td>with</td>
+                        <td>Name</td>
                     </tr>
         )
     }
@@ -70,7 +70,7 @@ const {query,setQuery,filterDevice}= useSeachDevises(data)
         return(
             <section className="container">
             <div className="form-group ">
-                <label>FILTRAR  POR:<strong>NOMBRE</strong>  ||<strong>ID</strong> ||<strong>MODELO</strong></label>    
+                <label>FILTER BY:<strong>id_device</strong>  ||<strong>device_name</strong> ||<strong>device_model</strong></label>    
                 <input 
                     type="text"
                     className="form-control"
