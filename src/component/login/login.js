@@ -29,7 +29,7 @@ class login extends React.Component {
     const data= await axios.post('https://api.myintelli.net/v1/login', {
         "username": this.state.usuario,
         "password" : this.state.contraseña,
-        "client" : 2
+        "client" : this.state.client
       }).then(function (response) {
             // console.log(response.data);
         sessionStorage.setItem("key",response.data.token)
@@ -58,7 +58,7 @@ class login extends React.Component {
                     <h1>INICIO DE SESION </h1>
 
                     <form onSubmit={this.handleSubmit} className="input">
-                        <div className="input-group mb-3">
+                    <div className="input-group mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text" id="basic-addon1">
                                     <img src="https://img.icons8.com/windows/20/000000/user-male.png" />
@@ -70,8 +70,26 @@ class login extends React.Component {
                                 value={this.state.usuusuario}
                                 type="text"
                                 className="form-control"
-                                placeholder="Correo"
+                                placeholder="username"
                                 aria-label="Username"
+                                aria-describedby="basic-addon1">
+
+                            </input>
+                        </div>
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="basic-addon1">
+                                    <img src="https://img.icons8.com/windows/20/000000/user-male.png" />
+                                </span>
+                            </div>
+                            <input
+                                name="client"
+                                onChange={this.handleChange}
+                                value={this.state.usuclient}
+                                type="text"
+                                className="form-control"
+                                placeholder="client"
+                                aria-label="client"
                                 aria-describedby="basic-addon1">
 
                             </input>
@@ -82,13 +100,14 @@ class login extends React.Component {
                                     <img src="https://img.icons8.com/windows/20/000000/lock.png" />
                                 </span>
                             </div>
+                            
                             <input
                                 name="contraseña"
                                 onChange={this.handleChange}
                                 value={this.state.usucontraseña}
                                 id="contraseña"
                                 type="password"
-                                placeholder="Contraseña"
+                                placeholder="password"
                                 className="form-control"
                                 aria-label="Contraseña"
                                 aria-describedby="basic-addon1">
