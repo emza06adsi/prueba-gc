@@ -2,8 +2,10 @@ import React from 'react'
 import {BrowserRouter,Switch, Route} from 'react-router-dom'
 import Login from './login/login'
 import Layout from './Layout/layout'
-import Saludo from './saludo'
-import E404 from './e404'
+import Saludo from './pages/saludo/saludo'
+import E404 from './pages/e404'
+import Devices from './pages/devices'
+
 function App (){
 
     let data=[]
@@ -30,12 +32,13 @@ function App (){
                     <Layout menu={data.modules}>
                         
                             <Route exact path={"/saludo"} component={Saludo}/>
-                            <Route exact path={"config/devices"} component={Saludo} />
-                            {/* <Route exact  component={E  404} /> */}
-                            <Route component={E404} />
-    
+                            <Route exact path={"/config/devices"} component={Devices} />
+                            
+                            {/* <Route  component={E404}/> */}
+                           
                         
                     </Layout>
+                    <Route component={E404} />
     
                 </Switch>
             </BrowserRouter>

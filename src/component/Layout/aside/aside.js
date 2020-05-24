@@ -14,7 +14,7 @@ class Aside extends React.Component {
             return(
             <div key={menu.key}>
             <section  className="aside-paginas">
-            <Link to={menu.route}> <FontAwesomeIcon icon="cogs" />{menu.value}</Link>
+            <Link to={"/"+menu.route}> <FontAwesomeIcon icon="cogs" />{menu.value}</Link>
             </section>
             {this.menuMenu(menu.menu)}
             </div>
@@ -38,7 +38,7 @@ class Aside extends React.Component {
             return(
                 
                 <section key={menu[0].key} className="aside-paginas">
-                <Link to={menu[0].route}> <FontAwesomeIcon icon="cogs" />{menu[0].value}</Link>
+                <Link to={"/"+menu[0].route}> <FontAwesomeIcon icon="cogs" />{menu[0].value}</Link>
                 {/* {()=>{this.menuMenu(menu.menu)}} */}
                 </section>
                   

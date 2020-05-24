@@ -1,0 +1,29 @@
+.saludo{
+    /* margin-top: 80px; */
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: grey; */
+    /* background-color: whitesmoke; */
+    text-align: center;
+}
+    
+.saludo h1{
+    color: #003946;
+    font-size: 200px;
+}
+.saludo p{
+    color:#003946;
+    font-size: 100px;
+}
+
+
+@media screen and (max-width: 640px)  {
+    /* For mobile phones: */
+    .saludo p{
+        color:#003946;
+        font-size: 50px;
+    }
+    
+  }
