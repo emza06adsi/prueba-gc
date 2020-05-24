@@ -1,0 +1,65 @@
+
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #003946;
+  color: white;
+}
+
+
+ .container{
+     margin-top: 10px;
+     width: 100%;
+    height: 70vh; 
+    overflow-y: scroll;
+    
+ }
+ .sticky{
+      margin-top: 0px;
+      position: sticky;
+      top:0;
+  }
+
+
+/* @media screen and (max-width: 800px)  {
+    .container{
+        width: 80%;
+     }
+    
+  } */
+
+/*
+.modal-header_title{
+    display: flex;
+}
+
+.modal-body{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.modal-header_body{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    
+} */
