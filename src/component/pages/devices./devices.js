@@ -63,9 +63,8 @@ class Devices extends React.Component{
         }else{
             return(
                 <div>
-                    <div className=""></div>
-                    <button onClick={this.handleClick}>+</button>
-<ListaDevises data={this.state.data.data.data.results}/>
+                     <button className="containe" onClick={this.handleClick}>+</button>
+                    <ListaDevises data={this.state.data.data.data.results}/>
              
                 </div>
                 )
